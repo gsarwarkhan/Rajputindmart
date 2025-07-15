@@ -1,0 +1,135 @@
+/* Global Styles */
+:root {
+    --primary-color: #43a047;
+    --secondary-color: #388e3c;
+    --accent-color: #c8e6c9;
+    --dark-color: #2e7d32;
+    --light-color: #f6fff7;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--light-color);
+}
+
+/* Navigation */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    color: var(--light-color) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.logo-placeholder {
+    width: 48px; height: 48px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: bold;
+}
+.site-title { font-weight: 700; color: var(--secondary-color); font-size: 2rem; margin-left: 12px; letter-spacing: 1px; }
+.facebook-style { background: #e8f5e9; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.hero-img { border-radius: 12px; box-shadow: 0 2px 8px rgba(56,142,60,0.08); }
+.order-form label { font-weight: 500; color: var(--dark-color); }
+.order-form .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.2rem rgba(67,160,71,.15); }
+.order-form .btn-success { background: var(--primary-color); border: none; }
+.order-form .btn-success:hover { background: var(--secondary-color); }
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    .logo-placeholder {
+        width: 40px; height: 40px; font-size: 1.5rem;
+    }
+    .site-title { font-size: 1.8rem; margin-left: 8px; }
+    .facebook-style { padding: 10px; }
+    .hero-img { box-shadow: 0 1px 4px rgba(56,142,60,0.06); }
+    .order-form .btn-primary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Animation */
+.loading-spinner {
+    border: 4px solid var(--light-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation for carousel items */
+@keyframes zoomIn {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.carousel-item.active {
+    animation: zoomIn 1.5s ease forwards;
+} 
